@@ -1,0 +1,173 @@
+{
+  "info": {
+    "_postman_id": "347147c9-ba6f-45c2-9498-d0a6226ad8aa",
+    "name": "Collection_09",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47822388",
+    "_collection_link": "https://go.postman.co/collection/47822388-347147c9-ba6f-45c2-9498-d0a6226ad8aa?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Req01",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// postman.setNextRequest(\"Req03\");\r",
+              "\r",
+              "pm.test(\"Status code is 200\", function () {\r",
+              "  if(pm.response.to.have.status(200)) {\r",
+              "    pm.execution.setNextRequest(\"Req03\")\r",
+              "  }\r",
+              "\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://httpbin.org/get?name=aviral&age=35",
+          "protocol": "https",
+          "host": [
+            "httpbin",
+            "org"
+          ],
+          "path": [
+            "get"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "aviral"
+            },
+            {
+              "key": "age",
+              "value": "35"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Req02",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.execution.setNextRequest(null);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://httpbin.org/get?job=Manager&age=40",
+          "protocol": "https",
+          "host": [
+            "httpbin",
+            "org"
+          ],
+          "path": [
+            "get"
+          ],
+          "query": [
+            {
+              "key": "job",
+              "value": "Manager"
+            },
+            {
+              "key": "age",
+              "value": "40"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Req03",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://httpbin.org/get?name=aviral&email=a123@gm.com",
+          "protocol": "https",
+          "host": [
+            "httpbin",
+            "org"
+          ],
+          "path": [
+            "get"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "aviral"
+            },
+            {
+              "key": "email",
+              "value": "a123@gm.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Req04",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.execution.setNextRequest(\"Req02\");"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://httpbin.org/get?Study=B.Tech&year=2012",
+          "protocol": "https",
+          "host": [
+            "httpbin",
+            "org"
+          ],
+          "path": [
+            "get"
+          ],
+          "query": [
+            {
+              "key": "Study",
+              "value": "B.Tech"
+            },
+            {
+              "key": "year",
+              "value": "2012"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
